@@ -1,0 +1,301 @@
+INFO - Started
+INFO - before JIRA Call
+TRACE - (ThreadId(1)) park without timeout
+TRACE - registering with poller
+TRACE - (ThreadId(2)) start runtime::block_on
+TRACE - wait at most 30s
+TRACE - (ThreadId(1)) park timeout 29.998292649s
+TRACE - checkout waiting for idle connection: ("https", najiraprodenvironment.acegroup.com:8443)
+DEBUG - starting new connection: https://najiraprodenvironment.acegroup.com:8443/
+TRACE - Http::connect; scheme=Some("https"), host=Some("najiraprodenvironment.acegroup.com"), port=Some(Port(8443))
+TRACE - select; timeout=None
+TRACE - polling IOCP
+DEBUG - resolving host="najiraprodenvironment.acegroup.com"
+TRACE - returning
+DEBUG - connecting to 10.16.211.67:8443
+TRACE - registering with poller
+TRACE - register Token(0) Readable | Writable
+TRACE - scheduling a connect
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a connect
+TRACE - set readiness to Writable
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - returning
+DEBUG - connected to 10.16.211.67:8443
+TRACE - set readiness to (empty)
+TRACE - scheduling a write of 192 bytes
+TRACE - done immediately with 192 bytes
+TRACE - set readiness to Writable
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a read: 0
+TRACE - set readiness to Readable | Writable
+TRACE - returning
+TRACE - set readiness to Readable
+TRACE - scheduling a write of 166 bytes
+TRACE - done immediately with 166 bytes
+TRACE - set readiness to Readable | Writable
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a read: 0
+TRACE - set readiness to Readable | Writable
+TRACE - returning
+TRACE - client handshake HTTP/1
+TRACE - handshake complete, spawning background dispatcher task
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - signal: Want
+TRACE - signal found waiting giver, notifying
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Busy }
+TRACE - poll_want: taker wants!
+TRACE - checkout dropped for ("https", najiraprodenvironment.acegroup.com:8443)
+TRACE - Client::encode method=GET, body=None
+TRACE - set readiness to (empty)
+TRACE - scheduling a write of 693 bytes
+TRACE - done immediately with 693 bytes
+TRACE - set readiness to Writable
+TRACE - detected no usage of vectored write, flattening
+DEBUG - flushed 638 bytes
+TRACE - flushed({role=client}): State { reading: Init, writing: KeepAlive, keep_alive: Busy }
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a read: 0
+TRACE - set readiness to Readable | Writable
+TRACE - returning
+TRACE - Conn::read_head
+DEBUG - read 4633 bytes
+TRACE - Response.parse([Header; 100], [u8; 4633])
+TRACE - Response.parse Complete(633)
+DEBUG - parsed 15 headers
+DEBUG - incoming body is chunked encoding
+TRACE - decode; state=Chunked(Size, 0)
+TRACE - Read chunk hex size
+TRACE - Read chunk hex size
+TRACE - Read chunk hex size
+TRACE - Read chunk hex size
+TRACE - Chunk size is 3993
+DEBUG - incoming chunked header: 0xF99 (3993 bytes)
+TRACE - Chunked read, remaining=3993
+TRACE - flushed({role=client}): State { reading: Body(Chunked(BodyCr, 0)), writing: KeepAlive, keep_alive: Busy }
+DEBUG - response '200 OK' for https://najiraprodenvironment.acegroup.com:8443/rest/api/2/search?jql=project+%3D+%22SCI+Marketplace+Production+Support%22+AND+status++in+%28closed%2C+Cancelled%2C+Resolved%2C+%22Awaiting+User+Confirmation%22%2C+%22Awaiting+User+Confirmation+-+1st+Follow+Up%22%2C+%22Awaiting+User+Confirmation+-+2nd+Follow+Up%22%29+AND+issuetype+%3D+%22L2+Incident%22+AND+component+%21%3D+%22Fast+Track+-+Old%22+AND+status+%21%3D+Duplicate+AND+resolved+%3E%3D+startOfDay%28-2%29+and+resolved+%3C%3D+endOfDay%28%29+and+%22MPS+RCA%22+%3D+Miscellaneous&fields=key%2Csummary%2Cassignee
+TRACE - wait at most 30s
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - returning
+TRACE - (ThreadId(1)) park timeout 29.999939286s
+TRACE - decode; state=Chunked(BodyCr, 0)
+TRACE - Read chunk hex size
+DEBUG - read 5 bytes
+TRACE - Read chunk hex size
+TRACE - Chunk size is 0
+TRACE - end of chunked
+DEBUG - incoming body completed
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - maybe_notify; read_from_io blocked
+TRACE - (ThreadId(1)) park timeout 29.999554497s
+TRACE - signal: Want
+TRACE - signal found waiting giver, notifying
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Idle }
+TRACE - signal: Want
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Idle }
+TRACE - poll_want: taker wants!
+TRACE - put; add idle connection for ("https", najiraprodenvironment.acegroup.com:8443)
+DEBUG - pooling idle connection for ("https", najiraprodenvironment.acegroup.com:8443)
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - closing runtime thread (ThreadId(2))
+TRACE - signaled close for runtime thread (ThreadId(2))
+TRACE - returning
+TRACE - (ThreadId(2)) Receiver is shutdown
+TRACE - (ThreadId(2)) end runtime::block_on
+TRACE - deregistering handle with poller
+TRACE - deregistering
+TRACE - cancelling active TCP read
+TRACE - signal: Closed
+TRACE - (ThreadId(2)) finished
+TRACE - closed runtime thread (ThreadId(2))
+INFO - Reading response from Jira
+INFO - Read the data "MPS-21087"$$$"IM1235238 | SEV3 - INVENTORY MANAGER - BREEZE ON LLC - 14950171 - BOP - REFERRAL INQUIRY QTE"$$$"Dileep Kumar"
+"MPS-21086"$$$"IM1235237 | Marketplace – BOP – D39370050 - Five Pack Creative, Inc.¬- Premium defect (ENDT)"$$$"Keyurbhai lathiya"
+"MPS-21069"$$$"IM1235198 | DUCK CREEK - CAPITAL GROWTH PROPERTIES, INC. - BOP - 14327949 - TRANSACTION STATUS ERROR"$$$"Gaurang Patil"
+"MPS-21029"$$$"IM1235073 | SEV3HOT -MP -BOP D94788857  BULLDOG GROOMING, LLC   -  Premium Discrepancy"$$$"Veerasekar Muthu"
+
+INFO - Calling Shell
+INFO - Reading STD Out
+INFO - Started
+INFO - before JIRA Call
+TRACE - registering with poller
+TRACE - (ThreadId(1)) park without timeout
+TRACE - (ThreadId(2)) start runtime::block_on
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - returning
+TRACE - wait at most 30s
+TRACE - (ThreadId(1)) park timeout 29.999931902s
+TRACE - checkout waiting for idle connection: ("https", najiraprodenvironment.acegroup.com:8443)
+DEBUG - starting new connection: https://najiraprodenvironment.acegroup.com:8443/
+TRACE - Http::connect; scheme=Some("https"), host=Some("najiraprodenvironment.acegroup.com"), port=Some(Port(8443))
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+DEBUG - resolving host="najiraprodenvironment.acegroup.com"
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - returning
+DEBUG - connecting to 10.16.211.67:8443
+TRACE - registering with poller
+TRACE - register Token(0) Readable | Writable
+TRACE - scheduling a connect
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a connect
+TRACE - set readiness to Writable
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - returning
+DEBUG - connected to 10.16.211.67:8443
+TRACE - set readiness to (empty)
+TRACE - scheduling a write of 192 bytes
+TRACE - done immediately with 192 bytes
+TRACE - set readiness to Writable
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a read: 0
+TRACE - set readiness to Readable | Writable
+TRACE - returning
+TRACE - set readiness to Readable
+TRACE - scheduling a write of 166 bytes
+TRACE - done immediately with 166 bytes
+TRACE - set readiness to Readable | Writable
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a read: 0
+TRACE - set readiness to Readable | Writable
+TRACE - returning
+TRACE - client handshake HTTP/1
+TRACE - handshake complete, spawning background dispatcher task
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - signal: Want
+TRACE - signal found waiting giver, notifying
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Busy }
+TRACE - poll_want: taker wants!
+TRACE - checkout dropped for ("https", najiraprodenvironment.acegroup.com:8443)
+TRACE - Client::encode method=GET, body=None
+TRACE - set readiness to (empty)
+TRACE - scheduling a write of 693 bytes
+TRACE - done immediately with 693 bytes
+TRACE - set readiness to Writable
+TRACE - detected no usage of vectored write, flattening
+DEBUG - flushed 638 bytes
+TRACE - flushed({role=client}): State { reading: Init, writing: KeepAlive, keep_alive: Busy }
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - select; timeout=None
+TRACE - polling IOCP
+TRACE - select; -> got overlapped
+TRACE - finished a read: 0
+TRACE - set readiness to Readable | Writable
+TRACE - returning
+TRACE - Conn::read_head
+DEBUG - read 4634 bytes
+TRACE - Response.parse([Header; 100], [u8; 4634])
+TRACE - Response.parse Complete(634)
+DEBUG - parsed 15 headers
+DEBUG - incoming body is chunked encoding
+TRACE - decode; state=Chunked(Size, 0)
+TRACE - Read chunk hex size
+TRACE - Read chunk hex size
+TRACE - Read chunk hex size
+TRACE - Read chunk hex size
+TRACE - Chunk size is 3993
+DEBUG - incoming chunked header: 0xF99 (3993 bytes)
+TRACE - Chunked read, remaining=3993
+TRACE - flushed({role=client}): State { reading: Body(Chunked(BodyCr, 0)), writing: KeepAlive, keep_alive: Busy }
+DEBUG - response '200 OK' for https://najiraprodenvironment.acegroup.com:8443/rest/api/2/search?jql=project+%3D+%22SCI+Marketplace+Production+Support%22+AND+status++in+%28closed%2C+Cancelled%2C+Resolved%2C+%22Awaiting+User+Confirmation%22%2C+%22Awaiting+User+Confirmation+-+1st+Follow+Up%22%2C+%22Awaiting+User+Confirmation+-+2nd+Follow+Up%22%29+AND+issuetype+%3D+%22L2+Incident%22+AND+component+%21%3D+%22Fast+Track+-+Old%22+AND+status+%21%3D+Duplicate+AND+resolved+%3E%3D+startOfDay%28-2%29+and+resolved+%3C%3D+endOfDay%28%29+and+%22MPS+RCA%22+%3D+Miscellaneous&fields=key%2Csummary%2Cassignee
+TRACE - wait at most 30s
+TRACE - select; timeout=None
+TRACE - (ThreadId(1)) park timeout 29.999964721s
+TRACE - polling IOCP
+TRACE - returning
+TRACE - decode; state=Chunked(BodyCr, 0)
+TRACE - Read chunk hex size
+DEBUG - read 5 bytes
+TRACE - Read chunk hex size
+TRACE - Chunk size is 0
+TRACE - end of chunked
+DEBUG - incoming body completed
+TRACE - set readiness to Writable
+TRACE - scheduling a read
+TRACE - maybe_notify; read_from_io blocked
+TRACE - signal: Want
+TRACE - signal found waiting giver, notifying
+TRACE - (ThreadId(1)) park timeout 29.99961398s
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Idle }
+TRACE - signal: Want
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Idle }
+TRACE - poll_want: taker wants!
+TRACE - put; add idle connection for ("https", najiraprodenvironment.acegroup.com:8443)
+DEBUG - pooling idle connection for ("https", najiraprodenvironment.acegroup.com:8443)
+TRACE - closing runtime thread (ThreadId(2))
+TRACE - signaled close for runtime thread (ThreadId(2))
+TRACE - signal: Want
+TRACE - flushed({role=client}): State { reading: Init, writing: Init, keep_alive: Idle }
+TRACE - select; timeout=Some(0ns)
+TRACE - polling IOCP
+TRACE - returning
+TRACE - (ThreadId(2)) Receiver is shutdown
+TRACE - (ThreadId(2)) end runtime::block_on
+TRACE - deregistering handle with poller
+TRACE - deregistering
+TRACE - cancelling active TCP read
+TRACE - signal: Closed
+TRACE - (ThreadId(2)) finished
+TRACE - closed runtime thread (ThreadId(2))
+INFO - Reading response from Jira
+INFO - Read the data "MPS-21087"$$$"IM1235238 | SEV3 - INVENTORY MANAGER - BREEZE ON LLC - 14950171 - BOP - REFERRAL INQUIRY QTE"$$$"Dileep Kumar"
+"MPS-21086"$$$"IM1235237 | Marketplace – BOP – D39370050 - Five Pack Creative, Inc.¬- Premium defect (ENDT)"$$$"Keyurbhai lathiya"
+"MPS-21069"$$$"IM1235198 | DUCK CREEK - CAPITAL GROWTH PROPERTIES, INC. - BOP - 14327949 - TRANSACTION STATUS ERROR"$$$"Gaurang Patil"
+"MPS-21029"$$$"IM1235073 | SEV3HOT -MP -BOP D94788857  BULLDOG GROOMING, LLC   -  Premium Discrepancy"$$$"Veerasekar Muthu"
+
+INFO - Calling Shell
+INFO - Reading STD Out

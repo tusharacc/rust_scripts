@@ -1,0 +1,3 @@
+2020-05-10 21:29:48,638 - __main__ - INFO - Processing Started
+2020-05-10 21:29:48,638 - __main__ - INFO - The records is [['"MPS-21087"', '"IM1235238 | SEV3 - INVENTORY MANAGER - BREEZE ON LLC - 14950171 - BOP - REFERRAL INQUIRY QTE"', '"Dileep Kumar"\n'], ['"MPS-21086"', '"IM1235237 | Marketplace – BOP – D39370050 - Five Pack Creative, Inc.¬- Premium defect (ENDT)"', '"Keyurbhai lathiya"\n'], ['"MPS-21069"', '"IM1235198 | DUCK CREEK - CAPITAL GROWTH PROPERTIES, INC. - BOP - 14327949 - TRANSACTION STATUS ERROR"', '"Gaurang Patil"\n'], ['"MPS-21029"', '"IM1235073 | SEV3HOT -MP -BOP D94788857  BULLDOG GROOMING, LLC   -  Premium Discrepancy"', '"Veerasekar Muthu"\n']]
+2020-05-10 21:29:48,863 - __main__ - INFO - Ended
